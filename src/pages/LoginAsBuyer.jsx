@@ -1,4 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+
+
 
 export default function LoginAsBuyer() {
 
@@ -70,7 +72,7 @@ const handleSubmit = (e) => {
                Sign up for, buying high-quality goods.
            </div>
           
-        <form onSubmit={handleSubmit} className="space-y-4 w-full w-1/3 flex flex-col justify-center shadow-md p-5">
+        <form onSubmit={handleSubmit} className="space-y-4  w-1/3 flex flex-col justify-center shadow-md p-5">
          <div >
          <label htmlFor="firstName" className="block font-medium text-gray-700 ">
            First Name
