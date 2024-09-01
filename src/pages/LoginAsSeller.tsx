@@ -1,13 +1,11 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react'
 
+export default function LoginAsSeller() {
 
-
-export default function LoginAsBuyer() {
-
-
-const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+const [formData, setFormData]= useState({
+    firstName:"",
+    lastName:"",
+    contactNo:"",
     email:"",
     password:"",
 });
@@ -15,7 +13,8 @@ const [formData, setFormData] = useState({
 const [error, setError] = useState("");
 
 const handleChange = (e) => {
-    const { name , value } = e.target;
+
+    const {name , value} = e.target;
 
     setFormData(
         {
@@ -23,6 +22,8 @@ const handleChange = (e) => {
             [name]: value,
         }
     )
+
+    
 }
 
 const validatePassword = (password) => {
@@ -50,9 +51,9 @@ const validatePassword = (password) => {
     return "";
   };
 
-
-const handleSubmit = (e) => {
+const handleSubmit = (e) =>{
     e.preventDefault();
+
     const passwordError = validatePassword(formData.password);
 
     if (passwordError) {
@@ -61,15 +62,18 @@ const handleSubmit = (e) => {
       setError("");
       console.log("Form Data:", formData);
     }
-
 }
+
+
+
+
 
 
   return (
     <div>
         <div className='flex flex-col md:w-full items-center justify-center min-h-screen'>
             <div className='mb-10 text-2xl flex justify-center font-bold text-gray-700'>
-               Sign up for, buying high-quality goods.
+               Sign up for, selling high-quality goods.
            </div>
           
         <form 
@@ -99,6 +103,20 @@ const handleSubmit = (e) => {
            name="lastName"
            id="lastName"
            value={formData.lastName}
+           onChange={handleChange}
+           required
+           className="mt-1 p-2 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+         />
+       </div>
+       <div >
+         <label htmlFor="contactNo" className="block font-medium text-gray-700">
+           Contact No
+         </label>
+         <input
+           type="text"
+           name="contactNo"
+           id="contactNo"
+           value={formData.contactNo}
            onChange={handleChange}
            required
            className="mt-1 p-2 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"

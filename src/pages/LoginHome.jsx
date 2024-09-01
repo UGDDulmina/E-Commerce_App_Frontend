@@ -12,7 +12,7 @@ export default function loginHome() {
       <div className="text-center mb-3 p-6 border-2 border-green-500 rounded-lg shadow-md">
         <h5 className="text-lg font-bold"></h5>
         <p className="text-gray-600 text-xl">"I’ m a seller, offering high-quality goods for buyer needs."</p>
-        <Link to="/signup-as-seller">
+        <Link to="/LoginAsSeller">
               <button className="inline-block mt-3 px-4 py-2 text-lg font-semibold text-green-700 border-2 border-green-600 rounded hover:bg-green-500 hover:text-white transition duration-1000 ease-in-out">
                 Signup as Seller
               </button>
