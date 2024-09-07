@@ -1,14 +1,22 @@
 import React, { useState } from 'react'
+import  { saveSeller } from '../service/seller'
 
 export default function LoginAsSeller() {
 
 const [formData, setFormData]= useState({
     firstName:"",
     lastName:"",
-    contactNo:"",
+    telephoneNumbers:"",
     email:"",
     password:"",
 });
+
+// const onSubmit = async () => {
+//   const res = await saveSeller({
+//     ...formData,
+//   })
+//   console.log(res);
+// }
 
 const [error, setError] = useState("");
 
@@ -51,24 +59,24 @@ const validatePassword = (password) => {
     return "";
   };
 
-const handleSubmit = (e) =>{
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const passwordError = validatePassword(formData.password);
 
     if (passwordError) {
-      setError(passwordError);
+        setError(passwordError);
     } else {
-      setError("");
-      console.log("Form Data:", formData);
+        setError("");
+        try {
+            const res = await saveSeller(formData);
+            console.log(res);
+        } catch (error) {
+            console.error('Error saving seller data:', error);
+            setError('Failed to create an account. Please try again later.');
+        }
     }
-}
-
-
-
-
-
-
+};
   return (
     <div>
         <div className='flex flex-col md:w-full items-center justify-center min-h-screen'>
@@ -109,14 +117,14 @@ const handleSubmit = (e) =>{
          />
        </div>
        <div >
-         <label htmlFor="contactNo" className="block font-medium text-gray-700">
+         <label htmlFor="telephoneNumbers" className="block font-medium text-gray-700">
            Contact No
          </label>
          <input
            type="text"
-           name="contactNo"
-           id="contactNo"
-           value={formData.contactNo}
+           name="telephoneNumbers"
+           id="telephoneNumbers"
+           value={formData.telephoneNumbers}
            onChange={handleChange}
            required
            className="mt-1 p-2 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
@@ -163,6 +171,7 @@ const handleSubmit = (e) =>{
          <button
            type="submit"
            className="w-1/2 py-2 px-4 bg-green-600 text-white font-semibold rounded-md shadow-md hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition duration-800 ease-in-out mt-4"
+          //  onClick={onSubmit}
          >
            Create an Account
          </button>
