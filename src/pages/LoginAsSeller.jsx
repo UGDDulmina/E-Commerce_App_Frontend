@@ -6,9 +6,9 @@ export default function LoginAsSeller() {
 const [formData, setFormData]= useState({
     firstName:"",
     lastName:"",
-    telephoneNumbers:"",
     email:"",
     password:"",
+    telephoneNumbers:"",
 });
 
 // const onSubmit = async () => {

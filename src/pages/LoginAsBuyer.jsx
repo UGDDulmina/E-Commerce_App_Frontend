@@ -13,14 +13,14 @@ const [formData, setFormData] = useState({
     password:"",
 });
 
-const onSubmit = async () => 
-{
-const res = await saveBuyer({
-  ...formData
-})
+// const onSubmit = async () => 
+// {
+// const res = await saveBuyer({
+//   ...formData
+// })
 
-console.log(res)
-}
+// console.log(res)
+// }
 
 
 
@@ -63,7 +63,7 @@ const validatePassword = (password) => {
   };
 
 
-const handleSubmit = (e) => {
+const handleSubmit = async (e) => {
     e.preventDefault();
     const passwordError = validatePassword(formData.password);
 
@@ -71,7 +71,16 @@ const handleSubmit = (e) => {
       setError(passwordError);
     } else {
       setError("");
-      console.log("Form Data:", formData);
+      try{
+
+        const res = await saveBuyer(formData);
+        console.log(res);
+      }catch(error){
+        console.error('Error saving buyer data:',error);
+        setError('Faild to create an account.please try again later.')
+      }
+      
+
     }
 
 }
@@ -155,7 +164,7 @@ const handleSubmit = (e) => {
 
        <div className='flex justify-center '>
          <button
-           onClick={onSubmit}
+          //  onClick={onSubmit}
            type="submit"
            className="w-1/2 py-2 px-4 bg-green-600 text-white font-semibold rounded-md shadow-md hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition duration-800 ease-in-out mt-4"
          >

@@ -2,7 +2,7 @@
 
 export  async function saveSeller(sellerData){
     try{
-        const response = await fetch('http://localhost:3000/sellers/create', {
+        const response = await fetch('http://localhost:3000/sellers/signup', {
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json',
@@ -11,7 +11,7 @@ export  async function saveSeller(sellerData){
         });
 
         if(!response.ok){
-            throw new Error('Failed to save student data');
+            throw new Error('Failed to save seller data');
         }
         console.log(response)
 
@@ -19,7 +19,7 @@ export  async function saveSeller(sellerData){
         return data;
     }
         catch(error){
-        console.error('Error saving student data:', error);
+        console.error('Error saving seller data:', error);
         throw error;
     }
 }

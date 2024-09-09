@@ -1,6 +1,6 @@
 export async function saveBuyer(buyerData){
     try{
-        const response = await fetch('http://localhost:3000/buyers/create',{
+        const response = await fetch('http://localhost:3000/buyers/signup',{
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json',
