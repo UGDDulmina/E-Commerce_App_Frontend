@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function loginHome() {
+export default function SignupHome() {
   return (
 
     <div>
@@ -12,7 +12,7 @@ export default function loginHome() {
       <div className="text-center mb-3 p-6 border-2 border-green-500 rounded-lg shadow-md">
         <h5 className="text-lg font-bold"></h5>
         <p className="text-gray-600 text-xl">"I’ m a seller, offering high-quality goods for buyer needs."</p>
-        <Link to="/LoginAsSeller">
+        <Link to="/SignupAsSeller">
               <button className="inline-block mt-3 px-4 py-2 text-lg font-semibold text-green-700 border-2 border-green-600 rounded hover:bg-green-500 hover:text-white transition duration-1000 ease-in-out">
                 Signup as Seller
               </button>
@@ -24,7 +24,7 @@ export default function loginHome() {
       <div className="text-center mb-3 p-6 border-2 border-green-500 rounded-lg shadow-md">
         <h5 className="text-lg font-bold"></h5>
         <p className="text-gray-600 text-xl">"I’ m a buyer, looking for high-quality goods for my needs."</p>
-        <Link to="/LoginAsBuyer">
+        <Link to="/SignupAsBuyer">
               <button className="inline-block mt-3 px-4 py-2 text-lg font-semibold text-green-700 border-2 border-green-600 rounded hover:bg-green-500 hover:text-white transition duration-1000 ease-in-out">
                 Signup as Buyer
               </button>
@@ -33,7 +33,7 @@ export default function loginHome() {
       </div>
     </div>
     <div>
-     <p className='text-lg'>Already have an account? <a href="" className='text-green-600 text-xl'> Log in</a></p> 
+     <p className='text-lg'>Already have an account? <Link to="/LoginPage"> <button className='ml-1 text-green-600 underline'>Login</button></Link> </p>
     </div>
    </div>
   </div>

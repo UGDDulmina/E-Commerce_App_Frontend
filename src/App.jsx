@@ -1,16 +1,20 @@
-import LoginAsBuyer from './pages/LoginAsBuyer';
+import SignupAsBuyer from './pages/SignupAsBuyer';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LoginHome from './pages/LoginHome'
+import SignupHome from './pages/SignupHome'
 import React from 'react';
-import LoginAsSeller from './pages/LoginAsSeller';
+import SignupAsSeller from './pages/SignupAsSeller';
+import LoginPage from './pages/LoginAsBuyer';
+import Sample from './pages/Sample';
 
 function App() {
   return (
     <Router>
     <Routes>
-      <Route path="/" element={<LoginHome />} />
-      <Route path="/LoginAsBuyer" element={<LoginAsBuyer />} />
-      <Route path="/LoginAsSeller" element={<LoginAsSeller />} />
+      <Route path="/" element={<SignupHome />} />
+      <Route path="/SignupAsBuyer" element={<SignupAsBuyer />} />
+      <Route path="/SignupAsSeller" element={<SignupAsSeller />} />
+      <Route path="/LoginPage" element={<LoginPage />} />
+      <Route path="/Sample" element={<Sample />} />
     </Routes>
   </Router>
   )
