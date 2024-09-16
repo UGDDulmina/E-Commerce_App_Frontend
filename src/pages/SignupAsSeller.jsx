@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import  { saveSeller } from '../service/seller'
+import { Link } from 'react-router-dom';
 
 export default function SignupAsSeller() {
 
@@ -77,6 +78,9 @@ const validatePassword = (password) => {
             <div className='mb-10 text-2xl flex justify-center font-bold text-gray-700'>
                Sign up for, selling high-quality goods.
            </div>
+           <div>
+            <p className='text-md'>Already have an account? <Link to="/LoginAsSeller"> <button className='ml-1 text-green-600 underline'>Login</button></Link> </p>
+          </div>
           
         <form 
         onSubmit={handleSubmit} 

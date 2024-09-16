@@ -32,9 +32,6 @@ export default function SignupHome() {
         </div>
       </div>
     </div>
-    <div>
-     <p className='text-lg'>Already have an account? <Link to="/LoginPage"> <button className='ml-1 text-green-600 underline'>Login</button></Link> </p>
-    </div>
    </div>
   </div>
   )

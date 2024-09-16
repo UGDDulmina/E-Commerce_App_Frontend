@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { saveBuyer } from '../service/buyer';
+import { Link } from 'react-router-dom';
 
 
 
@@ -80,6 +81,9 @@ const handleSubmit = async (e) => {
             <div className='mb-10 text-2xl flex justify-center font-bold text-gray-700'>
                Sign up for, buying high-quality goods.
            </div>
+           <div>
+            <p className='text-md'>Already have an account? <Link to="/LoginAsBuyer"> <button className='ml-1 text-green-600 underline'>Login</button></Link> </p>
+          </div>
           
         <form 
         onSubmit={handleSubmit} 
