@@ -4,7 +4,7 @@ import SignupHome from './pages/SignupHome'
 import React from 'react';
 import SignupAsSeller from './pages/SignupAsSeller';
 import LoginAsSeller from './pages/LoginAsSeller'; 
-import LoginAsBuyer from './pages/LoginAsSeller'; 
+import LoginAsBuyer from './pages/LoginAsBuyer'; 
 import Sample from './pages/Sample';
 
 function App() {

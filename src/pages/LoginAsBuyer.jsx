@@ -45,7 +45,7 @@ const handleSubmit = async (e) => {
     <div>
         <div className='flex flex-col md:w-full items-center justify-center min-h-screen'>
             <div className='mb- text-lg flex justify-center  text-gray-700'>
-            Don't have an account?  <Link to="/"> <button className='ml-1 text-green-600 underline'>Signup</button></Link>
+            Don't have an account? <Link to="/"> <button className='ml-1 text-green-600 underline'>Signup</button></Link>
            </div>
           
         <form 
